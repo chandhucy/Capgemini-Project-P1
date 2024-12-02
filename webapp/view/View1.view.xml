@@ -1,0 +1,61 @@
+<mvc:View controllerName="app.chandhu77.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page 1 " title="{i18n>title}">
+    <content>
+            <!-- <List
+                items="{/oMiningSet}"
+                id="idList"
+                mode="SingleSelectMaster"
+                selectionChange="onRowSelect">
+                <items>
+                    <ObjectListItem title="{LocationId}" />
+                </items>
+            </List> -->
+            <VBox>
+                <HBox>
+                    <SearchField
+                        id="searchField"
+                        placeholder="Search by Location"
+                        liveChange="onFilterSearch"
+                    />
+                </HBox>
+                <Table
+                    id="idTable1"
+                    items="{odataMining>/results}"
+                    mode="SingleSelectMaster"
+                    selectionChange="onRowPress"
+                    inset="false"
+                    growing="true"
+                    growingThreshold="10"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="Location Id" />
+                        </Column>
+                        <Column>
+                            <Text text="Location Description" />
+                        </Column>
+                        <Column>
+                            <Text text="Mining Resource Allocation" />
+                        </Column>
+                        <Column>
+                            <Text text="TotalCost" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{odataMining>LocationId}" />
+                                <Text text="{odataMining>LocationDesc}" />
+                                <Text text="{odataMining>MiningRa}" />
+                                <Text text="{odataMining>TotalCost}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+     
+    </Page>
+</mvc:View>
